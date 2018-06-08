@@ -1,23 +1,28 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 
-import { ShoppingLists } from '../../app/shopping-list';
 import { SHOPPINGLISTS } from '../../app/mock-lists';
 
 import { Storage } from '@ionic/storage';
 import { Geolocation } from '@ionic-native/geolocation';
+
+import { SuperListPage } from '../super-list/super-list';
+import { MercadilloListPage } from '../mercadillo-list/mercadillo-list';
+import { Todo100ListPage } from '../todo100-list/todo100-list';
 
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
-export class HomePage {  
+export class HomePage {
 
   key: string = 'Lists';
   name: string = 'Lista sin nombre';
 
-  shops = SHOPPINGLISTS;  
+  shops = SHOPPINGLISTS;
+
+  pages: Array<{ shop: string, component: any }>;
 
   constructor(
     public navCtrl: NavController,
@@ -33,7 +38,13 @@ export class HomePage {
         console.log('Error getting location', error);
       });
 
-   }
+    this.pages = [
+      { shop: 'Super', component: SuperListPage },
+      { shop: 'Mercadillo', component: MercadilloListPage },
+      { shop: 'Todo a 100', component: Todo100ListPage }
+    ];
+
+  }
 
   addList(newList) {
     //this.storage.set(this.key, { name: newList });
@@ -58,5 +69,15 @@ export class HomePage {
   ionViewWillLeave() {
     console.log("Looks like I'm about to leave :(");
   }
+
+  openPage(shopIndex) {
+    console.log(shopIndex);
+    console.log(this.pages[shopIndex].component);    
+    this.navCtrl.push(this.pages[shopIndex].component);
+  }
+
+  // openNavDetailsPage(item) {
+  //   this.nav.push(NavigationDetailsPage, { item: item });
+  // }
 
 }

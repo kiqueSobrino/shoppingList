@@ -21,8 +21,10 @@
     </div>
   </form>
 
+  <h1>Listas de la compra disponibles</h1>
+
   <ion-list>
-    <ion-item *ngFor="let item of shops; let i = index" [attr.data-index]="i">
+    <ion-item *ngFor="let item of shops; let i = index" [attr.data-index]="i" (click)="openPage(i)">
       <ion-card>
         <img src="{{'assets/imgs/shopping' + i + '.jpg'}}" />
         <div class="card-title">{{item.name}}</div>

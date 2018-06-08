@@ -23,7 +23,7 @@ import { ShoppingLists } from './shopping-list';
 
 export const SHOPPINGLISTS: ShoppingLists[] = [  
   {
-    name: 'super',
+    name: 'Super',
     products: [
       { name: 'Patatas', price: '10' },
       { name: 'Manzanas', price: '12' },
@@ -31,7 +31,7 @@ export const SHOPPINGLISTS: ShoppingLists[] = [
     ]
   },
   { 
-    name: 'mercadillo',
+    name: 'Mercadillo',
     products: [
       { name: 'Lechuga', price: '11' },
       { name: 'Camisetas', price: '40' },
@@ -39,7 +39,7 @@ export const SHOPPINGLISTS: ShoppingLists[] = [
     ]
   },
   {
-    name: 'todo a 100',
+    name: 'Todo a 100',
     products: [
       { name: 'Pilas', price: '1' },
       { name: 'Cartulinas', price: '1' },

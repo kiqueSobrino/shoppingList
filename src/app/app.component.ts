@@ -27,7 +27,7 @@ export class MyApp {
       { title: 'Home', component: HomePage },
       { title: 'Super', component: SuperListPage },
       { title: 'Mercadillo', component: MercadilloListPage },
-      { title: 'Todo a 100', component: Todo100ListPage }      
+      { title: 'Todo a 100', component: Todo100ListPage }
     ];
 
   }
