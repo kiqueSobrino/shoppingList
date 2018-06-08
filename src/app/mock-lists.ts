@@ -24,6 +24,7 @@ import { ShoppingLists } from './shopping-list';
 export const SHOPPINGLISTS: ShoppingLists[] = [  
   {
     name: 'Super',
+    date: "03/25/2015",
     products: [
       { name: 'Patatas', price: '10' },
       { name: 'Manzanas', price: '12' },
@@ -32,6 +33,7 @@ export const SHOPPINGLISTS: ShoppingLists[] = [
   },
   { 
     name: 'Mercadillo',
+    date: "03/25/2015",
     products: [
       { name: 'Lechuga', price: '11' },
       { name: 'Camisetas', price: '40' },
@@ -40,6 +42,7 @@ export const SHOPPINGLISTS: ShoppingLists[] = [
   },
   {
     name: 'Todo a 100',
+    date: "03/25/2015",
     products: [
       { name: 'Pilas', price: '1' },
       { name: 'Cartulinas', price: '1' },

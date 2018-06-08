@@ -10,5 +10,6 @@
 
 export class ShoppingLists {  
   name: string;
+  date: string;
   products: Array<{ name: string, price: string }>;
 }

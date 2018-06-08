@@ -13,6 +13,7 @@ export class SuperListPage {
   
   shop = SHOPPINGLISTS[0];
   shopName = this.shop.name;
+  shopDate = this.shop.date;
   products = this.shop.products;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
@@ -22,4 +23,8 @@ export class SuperListPage {
     console.log('ionViewDidLoad SuperListPage');    
   }
 
+  updateCheck(item) {
+    console.log(item);
+    // this.storage.set('name', 'Max');    
+  }
 }

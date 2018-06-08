@@ -7,27 +7,33 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content>  
+   <ion-item>
+    <p>Creada el <strong>{{shopDate}} </strong></p>
+    </ion-item>
   <ion-list>
     <ion-item *ngFor="let item of products">
       <ion-label>{{item.name}} - {{item.price}}
         <ion-icon name="remove-circle"></ion-icon>
       </ion-label>
-      <ion-checkbox color="dark" checked="true" (click)="updateCheck(item)"> </ion-checkbox>
+      <ion-checkbox color="dark" checked="false" (click)="updateCheck(item)"> </ion-checkbox>
       <button ion-button class="delete" title="eliminar producto de la lista" (click)="deleteItem(item)">X</button>
     </ion-item>
   </ion-list>
 
   <ion-item>
-    <ion-label color="primary" floating>Nuevo producto:</ion-label>
+    <ion-label color="primary" floating>Añadir producto:</ion-label>
     <ion-input clearInput="true" #itemName></ion-input>
   </ion-item>
   <ion-item>
-    <ion-label color="primary" floating>Precio</ion-label>
+    <ion-label color="primary" floating>Cantidad:</ion-label>
+    <ion-input clearInput="true" #itemName></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary" floating>Precio por unidad:</ion-label>
     <ion-input type="number" clearInput="true" #itemPrice></ion-input>
   </ion-item>
 
   <button ion-button block color="secondary" (click)="addItem(itemName.value, itemPrice.value); itemName.value=''; itemPrice.value=''">Añadir producto</button>
 
 </ion-content>
-
