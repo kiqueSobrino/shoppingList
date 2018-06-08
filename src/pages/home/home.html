@@ -7,28 +7,28 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>  
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+<ion-content padding class="card-background-page">
 
-  <button ion-button secondary menuToggle>Abrir menú</button>
+  <!-- <button ion-button secondary menuToggle>Abrir menú</button> -->
 
-    <form>
-      <ion-item>
-        <ion-label floating>Nueva lista de compra:</ion-label>
-        <ion-input type="text" #listName></ion-input>
-      </ion-item>
-      <div padding>
-        <button ion-button block (click)="addList(listName.value); listName.value='';">Añadir lista de compra</button>
-      </div>      
-    </form>    
-   
-  <!-- <ul class="lists">
-    <li *ngFor="let list of lists">
-      <span class="badge">{{list.id}}</span> {{list.name}}
-    </li>
-  </ul>     -->
-    
+  <form>
+    <ion-item>
+      <ion-label floating>Nueva lista de compra:</ion-label>
+      <ion-input type="text" #listName></ion-input>
+    </ion-item>
+    <div padding>
+      <button ion-button block (click)="addList(listName.value); listName.value='';">Añadir lista de compra</button>
+    </div>
+  </form>
+
+  <ion-list>
+    <ion-item *ngFor="let item of shops; let i = index" [attr.data-index]="i">
+      <ion-card>
+        <img src="{{'assets/imgs/shopping' + i + '.jpg'}}" />
+        <div class="card-title">{{item.name}}</div>
+        <div class="card-subtitle">{{item.products.length}} productos</div>
+      </ion-card>
+    </ion-item>
+  </ion-list>
 
 </ion-content>

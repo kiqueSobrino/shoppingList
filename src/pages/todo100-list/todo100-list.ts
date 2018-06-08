@@ -6,12 +6,12 @@ import { SHOPPINGLISTS } from '../../app/mock-lists';
 
 @IonicPage()
 @Component({
-  selector: 'page-mercadillo-list',
-  templateUrl: 'mercadillo-list.html',
+  selector: 'page-todo100-list',
+  templateUrl: 'todo100-list.html',
 })
-export class MercadilloListPage {
+export class Todo100ListPage {
 
-  shop = SHOPPINGLISTS[1];
+  shop = SHOPPINGLISTS[2];
   shopName = this.shop.name;
   products = this.shop.products;
 

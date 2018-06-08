@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
 
+import { ShoppingLists } from '../../app/shopping-list';
+import { SHOPPINGLISTS } from '../../app/mock-lists';
+
 import { Storage } from '@ionic/storage';
 import { Geolocation } from '@ionic-native/geolocation';
 
@@ -13,6 +16,8 @@ export class HomePage {
 
   key: string = 'Lists';
   name: string = 'Lista sin nombre';
+
+  shops = SHOPPINGLISTS;  
 
   constructor(
     public navCtrl: NavController,

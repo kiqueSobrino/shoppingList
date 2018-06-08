@@ -7,6 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { SuperListPage } from '../pages/super-list/super-list';
 import { MercadilloListPage } from '../pages/mercadillo-list/mercadillo-list';
+import { Todo100ListPage } from '../pages/todo100-list/todo100-list';
 
 @Component({
   templateUrl: 'app.html'
@@ -26,8 +27,7 @@ export class MyApp {
       { title: 'Home', component: HomePage },
       { title: 'Super', component: SuperListPage },
       { title: 'Mercadillo', component: MercadilloListPage },
-      { title: 'Todo a 100', component: ListPage },      
-      { title: 'Bodega', component: ListPage }
+      { title: 'Todo a 100', component: Todo100ListPage }      
     ];
 
   }
