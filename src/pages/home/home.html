@@ -12,13 +12,16 @@
     If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
   </p>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+  <button ion-button secondary menuToggle>Abrir menú</button>
 
     <form>
-      <label>Nueva lista de compra:
-        <input #listName />
-      </label>
-      <button ion-button (click)="addList(listName.value); listName.value='';">Añadir lista de compra</button>
+      <ion-item>
+        <ion-label floating>Nueva lista de compra:</ion-label>
+        <ion-input type="text" #listName></ion-input>
+      </ion-item>
+      <div padding>
+        <button ion-button block (click)="addList(listName.value); listName.value='';">Añadir lista de compra</button>
+      </div>      
     </form>    
    
   <!-- <ul class="lists">

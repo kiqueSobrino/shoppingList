@@ -4,18 +4,12 @@ import { IonicPage, NavController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { Geolocation } from '@ionic-native/geolocation';
 
-import { ShoppingList } from '../../app/shopping-list';
-import { LISTS } from '../../app/mock-lists';
-
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
-export class HomePage {
-
-  lists = LISTS;  
-  users: any[] = [];
+export class HomePage {  
 
   key: string = 'Lists';
   name: string = 'Lista sin nombre';

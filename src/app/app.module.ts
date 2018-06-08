@@ -5,6 +5,8 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { SuperListPage } from '../pages/super-list/super-list';
+import { MercadilloListPage } from '../pages/mercadillo-list/mercadillo-list';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -18,7 +20,9 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    SuperListPage,
+    MercadilloListPage
   ],
   imports: [
     BrowserModule,
@@ -30,7 +34,9 @@ import { HttpClientModule } from '@angular/common/http';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    SuperListPage,
+    MercadilloListPage
   ],
   providers: [
     StatusBar,
