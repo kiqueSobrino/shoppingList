@@ -72,17 +72,17 @@ export class HomePage {
   ionViewDidLoad() {
     console.log("load app");
     console.log(this.shops);
-    this.shops.push(
-      {
-        name: 'zzzz',
-        date: "03/25/2015",
-        products: [
-          { name: 'd', price: '10' },
-          { name: 'sdf', price: '12' },
-          { name: 'dsf', price: '33' }
-        ]
-      }
-    );
+    // this.shops.push(
+    //   {
+    //     name: 'zzzz',
+    //     date: "03/25/2015",
+    //     products: [
+    //       { name: 'd', price: '10',  },
+    //       { name: 'sdf', price: '12' },
+    //       { name: 'dsf', price: '33' }
+    //     ]
+    //   }
+    // );
     console.log(this.shops);
   }
 

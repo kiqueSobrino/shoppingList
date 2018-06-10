@@ -3,13 +3,13 @@
 //   name: string;
 // }
 
-// export class ListProduct {  
+// export class ListProduct {
 //   name: string;
 //   price: string;
 // }
 
-export class ShoppingLists {  
+export class ShoppingLists {
   name: string;
   date: string;
-  products: Array<{ name: string, price: string }>;
+  products: Array<{ name: string, price: number, qtty: number, checked: boolean }>;
 }
