@@ -31,7 +31,6 @@ export class ItemDetailPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ItemDetailPage');
   }
 
 }

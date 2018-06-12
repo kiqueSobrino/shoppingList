@@ -72,8 +72,6 @@ export class HomePage {
   }
 
   ionViewDidLoad() {
-    console.log("load app");
-    console.log(this.shops);
     // this.shops.push(
     //   {
     //     name: 'zzzz',
@@ -93,8 +91,6 @@ export class HomePage {
   }
 
   openPage(shopIndex) {
-    console.log(shopIndex);
-    console.log(this.pages[shopIndex].component);
     this.navCtrl.push(this.pages[shopIndex].component);
   }
 

@@ -9,6 +9,7 @@
 // }
 
 export class ShoppingLists {
+  id: number;
   name: string;
   date: string;
   products: Array<{ name: string, price: number, qtty: number, checked: boolean }>;
