@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, ModalController} from 'ionic-angular';
 
-import { ShoppingLists } from '../../app/shopping-list';
 import { SHOPPINGLISTS } from '../../app/mock-lists';
 
 
@@ -51,7 +50,7 @@ export class SuperListPage {
 
   updateCheck(item, i) {
     // this.storage.set('name', 'Max');
-    debugger
+    //debugger
     this.products[i].checked = this.check;
     console.log('Cucumbers new state:' + this.check);
   }

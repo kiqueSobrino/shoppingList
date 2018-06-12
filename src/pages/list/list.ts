@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
-import { Storage } from '@ionic/storage';
+// import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'page-list',
@@ -14,8 +14,8 @@ export class ListPage {
 
   constructor(
     public navCtrl: NavController,
-    public navParams: NavParams,
-    private storage: Storage
+    public navParams: NavParams
+    // private storage: Storage
   ) {
 
     this.items = [];
@@ -37,7 +37,7 @@ export class ListPage {
 
   updateCheck(item) {
     console.log(item);
-    // this.storage.set('name', 'Max');    
+    // this.storage.set('name', 'Max');
   }
 
   addItem(newItemName, newItemPrice) {
@@ -47,7 +47,7 @@ export class ListPage {
   deleteItem(item) {
     console.log(item);
   }
-  
+
   // itemTapped(event, item) {
   //   // That's right, we're pushing to ourselves!
   //   this.navCtrl.push(ListPage, {
