@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 import { SHOPPINGLISTS } from '../../app/mock-lists';
-import { ShoppingLists } from '../../app/shopping-list';
 
 import { Storage } from '@ionic/storage';
 import { Geolocation } from '@ionic-native/geolocation';
@@ -55,6 +54,9 @@ export class HomePage {
     this.storage.set(this.key, newList);
     this.storage.get(this.key).then((val) => {
       console.log('El producto de las listas es', val);
+    })
+    .catch((error) => {
+      console.log('Error initializeApp', error);
     });
 
     this.pages.push({ shop: newList, component: SuperListPage })
@@ -72,17 +74,17 @@ export class HomePage {
   ionViewDidLoad() {
     console.log("load app");
     console.log(this.shops);
-    this.shops.push(
-      {
-        name: 'zzzz',
-        date: "03/25/2015",
-        products: [
-          { name: 'd', price: '10' },
-          { name: 'sdf', price: '12' },
-          { name: 'dsf', price: '33' }
-        ]
-      }
-    );
+    // this.shops.push(
+    //   {
+    //     name: 'zzzz',
+    //     date: "03/25/2015",
+    //     products: [
+    //       { name: 'd', price: '10',  },
+    //       { name: 'sdf', price: '12' },
+    //       { name: 'dsf', price: '33' }
+    //     ]
+    //   }
+    // );
     console.log(this.shops);
   }
 

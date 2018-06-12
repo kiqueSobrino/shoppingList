@@ -8,6 +8,7 @@ import { ListPage } from '../pages/list/list';
 import { SuperListPage } from '../pages/super-list/super-list';
 import { MercadilloListPage } from '../pages/mercadillo-list/mercadillo-list';
 import { Todo100ListPage } from '../pages/todo100-list/todo100-list';
+import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -24,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
     ListPage,
     SuperListPage,
     MercadilloListPage,
-    Todo100ListPage
+    Todo100ListPage,
+    TabsPage
   ],
   imports: [
     BrowserModule,
@@ -39,7 +41,8 @@ import { HttpClientModule } from '@angular/common/http';
     ListPage,
     SuperListPage,
     MercadilloListPage,
-    Todo100ListPage
+    Todo100ListPage,
+    TabsPage
   ],
   providers: [
     StatusBar,

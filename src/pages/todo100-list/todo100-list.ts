@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-import { ShoppingLists } from '../../app/shopping-list';
 import { SHOPPINGLISTS } from '../../app/mock-lists';
 
 @IonicPage()

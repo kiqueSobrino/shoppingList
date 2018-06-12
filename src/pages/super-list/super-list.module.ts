@@ -9,5 +9,8 @@ import { SuperListPage } from './super-list';
   imports: [
     IonicPageModule.forChild(SuperListPage),
   ],
+  exports: [
+    SuperListPage
+  ]
 })
 export class SuperListPageModule {}

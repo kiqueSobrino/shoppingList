@@ -1,27 +1,48 @@
 <ion-header>
+
   <ion-navbar>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>{{shopName}}</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addItem()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
+
 </ion-header>
 
-<ion-content>  
-   <ion-item>
-    <p>Creada el <strong>{{shopDate}} </strong></p>
-    </ion-item>
-  <ion-list>
-    <ion-item *ngFor="let item of products">
-      <ion-label>{{item.name}} - {{item.price}}
-        <ion-icon name="remove-circle"></ion-icon>
-      </ion-label>
-      <ion-checkbox color="dark" checked="false" (click)="updateCheck(item)"> </ion-checkbox>
-      <button ion-button class="delete" title="eliminar producto de la lista" (click)="deleteItem(item)">X</button>
-    </ion-item>
-  </ion-list>
+<ion-content>
 
   <ion-item>
+    <p>Creada el <strong>{{shopDate}} </strong></p>
+  </ion-item>
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of products; let i = index" [attr.data-index]="i">
+      <ion-item>
+        <ion-label>{{item.name}} - {{item.qtty}} - {{item.price}} - {{textValue}}
+        </ion-label>
+        <!-- <ion-checkbox color="dark" [checked]="item.checked" (click)="updateCheck(item, i)"> </ion-checkbox> -->
+        <ion-checkbox color="dark" [checked]="item.checked" [(ngModel)]="check" (ionChange)="updateCheck(item, i)"></ion-checkbox>
+      </ion-item>
+
+      <ion-item-options side="right">
+        <button ion-button icon-only title="Editar producto" (click)="openItem(item)">
+          <ion-icon name="edit"></ion-icon>
+        </button>
+        <button ion-button icon-only title="Eliminar producto de la lista" (click)="deleteItem(item, i)" danger>
+          <ion-icon name="trash"></ion-icon>
+        </button>
+      </ion-item-options>
+
+    </ion-item-sliding>
+  </ion-list>
+
+  <!-- <ion-item>
     <ion-label color="primary" floating>Añadir producto:</ion-label>
     <ion-input clearInput="true" #itemName></ion-input>
   </ion-item>
@@ -32,8 +53,8 @@
   <ion-item>
     <ion-label color="primary" floating>Precio por unidad:</ion-label>
     <ion-input type="number" clearInput="true" #itemPrice></ion-input>
-  </ion-item>
+  </ion-item> -->
 
-  <button ion-button block color="secondary" (click)="addItem(itemName.value, itemPrice.value); itemName.value=''; itemPrice.value=''">Añadir producto</button>
+  <!-- <button ion-button block color="secondary" (click)="addItem(itemName.value, itemPrice.value); itemName.value=''; itemPrice.value=''">Añadir producto</button> -->
 
 </ion-content>
