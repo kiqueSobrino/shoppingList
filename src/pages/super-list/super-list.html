@@ -27,7 +27,7 @@
         <ion-label>{{item.name}} - {{item.qtty}} - {{item.price}} - {{textValue}}
         </ion-label>
         <!-- <ion-checkbox color="dark" [checked]="item.checked" (click)="updateCheck(item, i)"> </ion-checkbox> -->
-        <ion-checkbox color="dark" [checked]="item.checked" (ionChange)="updateCheck($event, item, i)"></ion-checkbox>
+        <ion-checkbox color="dark" [checked]="item.checked" (ionChange)="updateCheck($event, i)"></ion-checkbox>
       </ion-item>
 
       <ion-item-options side="right">

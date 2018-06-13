@@ -36,14 +36,26 @@ export class SuperListPage {
 
   ionViewDidLoad() {
     // check if storageList already exists, if not, set the origin mock-list data
+    this.storage.length().then(result => {
+      if (result > 0) {
+        this.setData();
+      }else{
+        this.products = this.shop.products;
+      }
+    })
+      .catch((error) => {
+        console.log('Error: ', error);
+      });
+  }
+
+  setData() {
     this.storage.forEach((value, key, index) => {
       if (key == this.storageListKey) {
-        console.log(value);
         this.storage.get(key).then((val) => {
           this.products = val[this.listIndex].products;
         })
           .catch((error) => {
-            console.log('Error initializeApp', error);
+            console.log('Error: ', error);
           });
       }
       else {
@@ -72,61 +84,11 @@ export class SuperListPage {
   }
 
 
-  updateCheck(e, item, i) {
-    // this.storage.set('name', 'Max');
-    //debugger
-    // this.products[i].checked = this.check;
-    console.log(item);
-    console.log(i);
-    console.log(this.shop);
-    console.log(e.checked);
-
-    // this.storage.set('Listas', [     
-    //   {
-    //      nombre: 'sdf', estado: e.checked
-    //   }
-    // ]);
-
-    // console.log(this.storage.get('Listas'));
-
-    //this.shop.products[i].checked 
-        
-
-    this.storage.set(this.storageListKey,[
-      {
-        id: 0,
-        name: 'Super',
-        date: "03/25/2015",
-        products: [
-          { name: 'Patatas', price: 10, qtty: 3, checked: true },
-          { name: 'Manzanas', price: 12, qtty: 1, checked: true },
-          { name: 'Pescado', price: 33, qtty: 1, checked: false }
-        ]
-      },
-      {
-        id: 1,
-        name: 'Mercadillo',
-        date: "03/25/2015",
-        products: [
-          { name: 'Lechuga', price: 11, qtty: 1, checked: true },
-          { name: 'Camisetas', price: 40, qtty: 1, checked: false },
-          { name: 'Calcetines', price: 1, qtty: 1, checked: false }
-        ]
-      },
-      {
-        id: 2,
-        name: 'Todo a 100',
-        date: "03/25/2015",
-        products: [
-          { name: 'Pilas', price: 1, qtty: 1, checked: false },
-          { name: 'Cartulinas', price: 1, qtty: 1, checked: true },
-          { name: 'Papel de regalo', price: 1, qtty: 1, checked: true },
-          { name: 'Celo', price: 1, qtty: 1, checked: false }
-        ]
-      }
-    ]);
-
-
+  updateCheck(e, i) {
+    // Update product
+    this.shop.products[i].checked = e.checked;
+    // Set it in storage
+    this.storage.set(this.storageListKey, this.shoppingLists);
   }
 
   deleteItem(item, i) {
