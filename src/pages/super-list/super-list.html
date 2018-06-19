@@ -21,6 +21,12 @@
     <p>Creada el <strong>{{shopDate}} </strong></p>
   </ion-item>
 
+  <table>
+    <tr>
+      <td></td>
+    </tr>
+  </table>
+
   <ion-list>
     <ion-item-sliding *ngFor="let item of products; let i = index" [attr.data-index]="i">
       <ion-item>
@@ -42,23 +48,25 @@
     </ion-item-sliding>
   </ion-list>
 
-  <ion-list>
-  
-    <ion-item>
-      <ion-label>Pepperoni</ion-label>
-      <ion-toggle [(ngModel)]="pepperoni"></ion-toggle>
-    </ion-item>
-  
-    <ion-item>
-      <ion-label>Sausage</ion-label>
-      <ion-toggle [(ngModel)]="sausage" disabled="true"></ion-toggle>
-    </ion-item>
-  
-    <ion-item>
-      <ion-label>Mushrooms</ion-label>
-      <ion-toggle [(ngModel)]="mushrooms"></ion-toggle>
-    </ion-item>
-  
+  <ion-list class="list-products">
+    <ion-item-sliding *ngFor="let item of products; let i = index" [attr.data-index]="i">
+      <ion-item class="list-products-item">
+        <ion-label class="item-label">{{item.name}}</ion-label>
+        <ion-input type="number" [value]="item.qtty"></ion-input>
+        <ion-input type="number" [value]="item.price"></ion-input>€
+        <ion-toggle color="dark" [checked]="item.checked" (ionChange)="updateCheck($event, i)"></ion-toggle>
+      </ion-item>
+
+      <ion-item-options side="right">
+        <button ion-button icon-only title="Editar producto" (click)="openItem(item)">
+          <ion-icon name="edit"></ion-icon>
+        </button>
+        <button ion-button icon-only title="Eliminar producto de la lista" (click)="deleteItem(item, i)" danger>
+          <ion-icon name="trash"></ion-icon>
+        </button>
+      </ion-item-options>
+    
+    </ion-item-sliding>
   </ion-list>
 
   <!-- <ion-item>

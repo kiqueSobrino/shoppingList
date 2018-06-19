@@ -37,6 +37,7 @@ export class SuperListPage {
   ionViewDidLoad() {
     // check if storageList already exists, if not, set the origin mock-list data
     this.storage.length().then(result => {
+      console.log(result);
       if (result > 0) {
         this.setData();
       }else{
@@ -107,7 +108,10 @@ export class SuperListPage {
           text: 'Eliminar',
           handler: () => {
             if (this.products[i] == item) {
+              console.log(this.shoppingLists);
               this.products.splice(i, 1);
+              console.log(this.shoppingLists);
+              this.storage.set(this.storageListKey, this.shoppingLists);
             }
           }
         }
@@ -115,6 +119,13 @@ export class SuperListPage {
     });
     alert.present();
   }
+
+  // delete(e, i) {
+  //   // Update product
+  //   this.shop.products[i].checked = e.checked;
+  //   // Set it in storage
+  //   this.storage.set(this.storageListKey, this.shoppingLists);
+  // }
 
   editQtty(item, i) {
     let alert = this.alertCtrl.create({
